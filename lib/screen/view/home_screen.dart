@@ -1,3 +1,4 @@
+import 'package:a_exam_1/screen/Model/home%20model.dart';
 import 'package:a_exam_1/screen/Model/search_model.dart';
 import 'package:a_exam_1/screen/provider/EProvider.dart';
 import 'package:flutter/cupertino.dart';
@@ -90,7 +91,10 @@ class _homeScreenState extends State<homeScreen> {
                             return Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: InkWell(
-                                onTap: () => Navigator.pushNamed(context, "viewScreen",arguments: index),
+                                onTap: () {
+                                 homeModel hm = homeModel(productname: "${e1.data![index].productTitle}",image: "${e1.data![index].productPhotos![0]}",price: "${e1.data![index].offer!.price}",des: "${e1.data![index].productDescription}");
+                                  Navigator.pushNamed(context, "viewScreen",arguments: hm);
+                                },
                                 child: ListTile(
                                   leading: Container(
                                       width: 100,
