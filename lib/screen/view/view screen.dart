@@ -28,9 +28,9 @@ class _viewScreenState extends State<viewScreen> {
                 height: 350,
                 width: double.infinity,
                 color: Colors.orange,
-                child: Image.asset(
+                child: Image.network(
                   "${hm.image}",
-                  fit: BoxFit.cover,
+                  fit: BoxFit.fill,
                 ),
               ),
               Padding(
